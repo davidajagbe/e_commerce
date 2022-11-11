@@ -1,0 +1,22 @@
+.root{
+ /* maxWidth: 345, original width style */
+    max-width: 100%;
+    /* background-color: red; */
+}
+.cardMedia {    
+    height: 0;
+    /* 16:9 */
+    padding-top: 56.25%;
+}
+
+.cardActions {
+    display: flex;
+    justify-content:flex-end;
+    color: red;
+}
+
+.cardContent {
+    display: flex;
+    justify-content: space-between;
+    color: red;
+}

@@ -4,6 +4,8 @@ import { AddShoppingCart} from '@mui/icons-material';
 
 import './styles.css'
 
+ //import useStyles from './styles' 
+
 // maxWidth: 345, original width style
 // const CardStyles = styled.Card`
 //     maxWidth: 100%;
@@ -28,11 +30,11 @@ import './styles.css'
     
 
 
-const Product = ({product}) => {
+const Product = ({product, onAddToCart}) => {
     // const classes = useStyles();
     return(
         <Card className='root'>
-            <CardMedia image={product.image} title={product.name} className='cardMedia'/>
+            <CardMedia image={product.image.url} title={product.name} className='cardMedia'/>
     
             <CardContent className='cardContent'>
                 <div>
@@ -40,15 +42,13 @@ const Product = ({product}) => {
                         {product.name}
                     </Typography>
                     <Typography variant="h5">
-                        {product.price}
+                        {product.price.formatted_with_symbol}
                     </Typography>
-                    <Typography variant="body2" color="textSecondary">
-                        {product.description}
-                    </Typography>
+                    <Typography dangerouslySetInnerHTML={{ __html: product.description}} variant="body1" color="textSecondary" />
                 </div>
             </CardContent>
             <CardActions disableSpacing className='cardActions' >
-                <IconButton aria-label="Add To Cart" style={{color: 'red'}}>
+                <IconButton aria-label="Add To Cart" style={{color: 'red'}} onClick={() => onAddToCart(product.id, 1)}>
                     <AddShoppingCart />
                 </IconButton>
             </CardActions>

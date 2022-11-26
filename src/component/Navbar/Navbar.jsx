@@ -3,21 +3,21 @@ import { AppBar, Toolbar, IconButton, Badge, Typography, Menu, MenuItem } from "
 import { ShoppingCart } from "@mui/icons-material"; 
 
 import logo from '../../assets/commerce.png';
+import './styles.css'
 
-
-const Navbar =() =>{
+const Navbar =({ totalItems }) =>{
     
     return(
-        <AppBar position="fixed" className='appbar' color='inherit'>
+        <AppBar position="fixed" className='appBar' color='inherit'>
             <Toolbar>
                 <Typography variant="h6" className="title" color='inherit'>
-                    <img src={logo} alt="commerce.jsx" height='20px' className='appbar.image'/>
+                    <img src={logo} alt="commerce.jsx" height='20px' className='image'/>
                     shopNet
                 </Typography>
                 <div className="grow"/>
                 <div className="button">
-                    <IconButton aria-label="Show cart items" color='inherit' style={{display: 'flex', alignItems: 'center', justifyContent: 'flex-end', padding: '10px 20px',}}>
-                        <Badge badgeContent={2} color='primary' >
+                    <IconButton aria-label="Show cart items" color='inherit' >
+                        <Badge badgeContent={totalItems} color='secondary' >
                             <ShoppingCart />
                         </Badge>
                     </IconButton>

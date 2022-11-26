@@ -2,8 +2,9 @@
 .content{
     flex-grow: 1;
     background:default;
-    padding: ;
+    padding: 3px;
+    padding-top: 75px;
 }
 .root{
-    flex-grow: 1,
+    flex-grow: 1;
 }

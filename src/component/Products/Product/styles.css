@@ -18,5 +18,5 @@
 .cardContent {
     display: flex;
     justify-content: space-between;
-    color: red;
+    /* color: red; */
 }
